@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipwreckt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Shipwreckt</h1>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+    </nav>
+    
+
+    <main>
+        <img src="../Images/fakefetch/fakefetch.png">
+
+        <p>
+             Fakefetch is like neofetch but made by me. The reason I made Fakefetch is because one day while going through the neofetch config I thought, <br>
+             why don't I just made my own. So I did and overtime I have been updating it to my liking, I have even added some templates.
+        </p>
+
+        <h2>How does it work ?</h2>
+        <p>Fakefetch uses commands from GNU/Linux terminal and commands from the lsb-release (Linux Standard Base)<br>
+           to tell the user what they want about there computer, It does not have all the utilitys of neofetch but<br>
+           I do plan to add more things over time but so far Fakefetch can do a variaty of things like:<br>
+        </p>
+
+        <p style="color: rgb(95, 95, 95); border-collapse: collapse; width: 100%;">
+        What GNU/Linux system you are using <br><br>
+        What GPU/CPU you have <br><br>
+        What your Host name is and what your Username is <br><br>
+        What your uptime on your computer is <br><br>
+        What package manager you are using <br><br>
+        </p>
+
+        <p>I am planning on adding things like what window manager you are using, what your local/public IP is, how much battery you have for laptop users <br>
+           and more, I will do my best to achive this in the future so stay tuned if you are intrested !</p>
+
+           <hr>
+        <h2>How to use Fakefetch</h2>
+
+        <H4>Step one</H4>
+        <p>First thing you do want to do is clone Git repo. You can do this by using this command, git clone https://gitlab.com/Shipwreckt/fakefetch<br>
+            After doing this you do need to install something called lsb-release. On Arch Linux it is <u>sudo pacman -S lsb-release</u> on apt it should be <u>sudo apt install lsb-release</u><br><br>
+        </p>
+        <h4>Step two</h4>
+        <p>
+            You want to cd into the file, so go to the location where the file is and open it with your prefered text editor,<br> 
+            from there all you need to do is configure things to your liking there is documentasion below if you want to know more.<br>
+            Also to test it you need to make it an active command so all you need to do for that is do <u>chmod +x fakefetch.sh</u><br>
+           You can test your config with ./fakefetch.sh 
+        </p>
+
+        <h4>Step three</h4>
+        <p>You are now done configuring Fakefetch now you want to make it a command that you can use anywhere, to do this is simple<br>
+           type <u>sudo mv ~/fakefetch/fakefetch.sh /usr/local/bin/</u> if this does not work for you then double check where your<br>
+           config file is and then try again.</p>
+
+        <h4>optinal steps</h4>
+        <p>To make Fakefetch run whenever you open a terminal type <u>echo "fakefetch.sh" >> ~/.bashrc</u> and it should work.<br>
+           Whenever you type <u>fakefetch.sh</u> it should come up in your terminal, also a note for now it does change all your<br>
+           Terminal colours, I am working on fixing this so give it time !</p>
+
+        <hr>
+        <h2>What are the variables ?</h2>
+        <h3>Colours</h3>
+        <p>So far the colours are vary mininal this is due to this origanally being my project for me only, to add more colours is simple<br>
+           you need to declear a new variable and set a colour for it, don't worry it is not that hard for you do.<br><br>
+           Here is a default colour that is in the list <u>MAGENTA='\033[38;5;98m'</u>, this may look scary but it is just a quick change<br>
+           All you need to change is the end bit 98m (keep the m) to a colour on this list <a href="https://www.ditig.com/publications/256-colors-cheat-sheet">https://www.ditig.com/publications/256-colors-cheat-sheet</a><br>
+           An example would be <u>GOLD='\033[38;5;220m'</u> just choose whatever colours you want and mess around and see what you like.
+            </p>
+
+        <p>From this point we are going to cover all the boaring variables so if you want to read on go ahead!</p>
+
+        <h3>Username and Hostname</h3>
+        <p>
+           <u>USERNAME=$(whoami)</u> This decares a variable called USERNAME witch is used in the Fakefetch config to show what user is logged in<br>
+           <u>HOSTNAME=$(uname -n)</u> This does the same thing as USERNAME but just for what your host name is for your computer
+        </p>
+
+        <h3>Distro</h3>
+        <p>
+            <u>DISTRO=$(lsb_release -sd | sed 's/"//g')</u> lsb_release -sd basically gives you the output "arch linux" or whatever GNU/Linux distro<br>
+            you are currently using. The sed 's/"//g' removes all double quotes ("") from the output of lsb_release -sd.<br><br>
+
+            <img src="../Images/fakefetch/OS.png">
+            This gets the output of DISTRO and basically displays it. Change the colour if you want it displayed diffrent.
+            
+        </p>
+
+        <h3>The rest</h3>
+        <p>
+        The rest is basically the same, I don't suggest changing the main bits because it will probaby break it, I just suggest<br>
+        Messing around with the colours and the ASCII art for the time being unless you know your bash then go ahead modify it to<br>
+        your hearts content it is free and open sourse software at the end of the day !
+        
+        </p>
+        <hr>
+        <h3>How to change variable colours</h3>
+        <img src="../Images/fakefetch/OS.png">
+        <p>As you can see there is a colour variable that being MAGENTA, if you wish to change the colour of the output change the <br>
+        Variable name to a diffrent colour that you have defined beforehand.</p>
+        <hr>
+        <h3>Extra</h3>
+        <p>Remember this is just a project I have done in my spare time and this is my first program to use bash so it might not be perfect <br>
+        but I am doing my best!</p>
+
+        <p>Here is the source code if you wanna have a little look around </p>
+
+        <a href="https://gitlab.com/Shipwreckt/fakefetch/">https://gitlab.com/Shipwreckt/fakefetch/</a><br>            
+  
+    </main>
+
+    <footer>
+        <p>Made by Shipwreckt</p>
+    </footer>
+
+</body>
+
+</html>

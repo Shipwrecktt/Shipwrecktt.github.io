@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipwreckt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Shipwreckt</h1>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+    </nav>
+    
+
+    <main>
+        <img src="../Images/qtile/qtile.png" style="max-width:30%; height:auto;">
+        <p>There is not much to say about my Qtile config but I have modified it to my liking in a few ways.</p>
+
+        <h2><u>Shortcuts</u></h2>
+        <p>
+        I have added three custom shortcuts so I can launch discord, firefox, steam, and code with using this command <br>
+        <img src="../Images/qtile/shortcuts.png" style="max-width:70%; height:auto;">
+        This tells Qtile that if i press mod4+x (mod4 is the windows key)it will launch whatever applocation I have binded to it for example<br>
+        f for firefox and such overtime I will probably add more applocations to this list because it is so much faster then serching the<br>
+        applocation name in the run menu and it is has increated my work flow.
+        </p>
+
+        <h2><u>Groups</u></h2>
+        <p>I have assigned groups their own names so I can stay more organized. It also just looks better then numbers in my opinion.</p>
+        <img src="../Images/qtile/Group.png" style="max-width:70%; height:auto;">
+        <p>I am thinking of changing the group names and the order they are in to fit my work flow better but for now I will just<br>
+        stick with it because It is working as intended but in the future I will probably change it up a little bit. </p>
+
+        <h2><u>Layouts/widget defaults</u></h2>
+        <p>Here is my layours that I have chosen and have configued to what is best for me.
+            <img src="../Images/qtile/layouts.png" style="max-width:70%; height:auto;"><br>
+            I have chosen MonadTall layout as my primary layout becuase I have a large primary monitor and I personally like <br>
+            the spaces that MonadTall provides and it is more styalish. But I still have max and colums enabled just in case <br>
+            I want to use them, I mainly use them on my second monitor. Also due to me having a bigger monitor I have chosen <br>
+            a larger font in bold so I am able to see it.
+        </p>
+        <p>This is why MonadTall looks like on my main monitor</p>
+        <img src="../Images/qtile/terminals.png " style="max-width:50%; height:auto;">
+
+        <h2><u>Widgets</u></h2>
+        <h3><u>Status bar</u></h3>
+        <p>I am going to go through my widgets now. If one is not mentioned that is because it has default settings.</p>
+        <img src="../Images/qtile/widgetbar.png" style="max-width:70%; height:auto;">
+        <p>
+            I have put my status bar on the top of my screen because it is easier to see then at the bottem (in my opinion)<br>
+            I have also changed the colours of the windows that I am currently on, and I have changed it from a box selection<br>
+            to a block selection so that it is more noticable and for styal, I have also changed the active and inactive windows<br>
+            to the same colour because I do not personally want them to be diffrent I think they look good as just white throughout.<br>
+        </p>
+
+        <h3><u>Background colour</u></h3>
+        <p>The backgound colour for my status bar is #1d141d A very dark purple. I chose this because it matches with my astetic.<br>
+        The only widget to diffy this colour standord is the widget.windowname because there needs to be some variation in my status bar.</p>
+
+        <h3><u>Clock</u></h3>
+        <p>I have changed the date formate and the time formate to Day/Month/Year and 24 hour time <br>
+            widget.Clock(format="%d-%m-%Y %H:%M",), This is how i achived that.
+        </p>
+        
+        <h2><u>Start up programs</u></h2>
+        <p>
+            I have a few startup programs. I have nitrogen so I can have a wallpaper on startup insted of manually setting it every single time<br>
+            I also have Picom for my compositor, I only have it so I can have see through terminals becuase they just feel and look better<br>
+            And my last startup program is redshift, I have this because it is easier on my eyes if I am usign the computer for a long time.
+            <img src="../Images/qtile/autostart.png" style="max-width:70%; height:auto;">
+        </p>
+
+        
+        <hr>
+        <h3>Here is what my desktop currently looks like</h3>
+        <img src="../Images/qtile/desktop.png" style="max-width:50%; height:auto;">
+        <p>
+              For it to work you will need <a href="https://pypi.org/project/psutil/">psutil</a>, it is avaliable in most package managers.<br>
+              Here is my <a href="https://gitlab.com/Shipwreckt/Qtile-conf/-/blob/main/config.py?ref_type=heads">config file</a>
+            </p>
+    </main>
+
+    <footer>
+        <p>Made by Shipwreckt</p>
+    </footer>
+
+</body>
+
+</html>
