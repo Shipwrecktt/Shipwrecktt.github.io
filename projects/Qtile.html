@@ -21,71 +21,110 @@
     
 
     <main>
-        <img src="../Images/qtile/qtile.png" style="max-width:30%; height:auto;">
-        <p>There is not much to say about my Qtile config but I have modified it to my liking in a few ways.</p>
+        <img src="../Images/fakefetch/fakefetch.png">
 
-        <h2><u>Shortcuts</u></h2>
         <p>
-            I have added three custom shortcuts so I can launch Discord, Firefox, Steam, and code using this command. <br>
-        <img src="../Images/qtile/shortcuts.png" style="max-width:70%;" title="This is my shorcut list">
-        This tells Qtile that if I press mod4+x (mod4 is the Windows key), it will launch whatever app I have bound to it, for example<br>
-        f for Firefox and such. Overtime I will probably add more apps to this list because it is so much faster than scanning for the<br>
-        applocation name in the run menu, and it has increased my work flow by a lot.
+            Fakefetch is like Neofetch but made by me.The reason I made Fakefetch is because one day while going through the neofetch config I thought, <br>
+            why don't I just make my own? So I did, and over time I have been updating it to my liking. I have even added some templates.
         </p>
 
-        <h2><u>Groups</u></h2>
-        <p>I have assigned groups their own names so I can stay more organized. It also just looks better than numbers, in my opinion.</p>
-        <img src="../Images/qtile/Group.png" style="max-width:70%;" title="Diffrent group names">
-        <p>I am thinking of changing the group names and the order they are in to fit my work flow better, but for now I will just<br>
-        stick with it because it is working as intended, but in the future I will probably change it up a little bit. </p>
-
-        <h2><u>Layouts/widget defaults</u></h2>
-        <p>Here are my layouts that I have chosen and configured to what is best for me.
-            <img src="../Images/qtile/layouts.png" style="max-width:70%;" title="Diffrent layours"><br>
-            I have chosen the MonadTall layout as my primary layout because I have a large primary monitor and I personally like <br>
-            the spaces that MonadTall provides, and it is more stylish. But I still have max and colums enabled, just in case I need them. <br>
-            I want to use them; I mainly use them on my second monitor. Also, due to me having a bigger monitor, I have chosen <br>
-            a larger font in bold so I am able to see it.
+        <h2>How does it work ?</h2>
+        <p>Fakefetch uses commands from the GNU/Linux terminal and commands from the lsb-release (Linux Standard Base)<br>
+            to tell the user what they want about their computer, it does not have all the utilities of neofetch, but<br>
+            I do plan to add more things over time, but so far, Fakefetch can do a variety of things,
         </p>
-        <p>This is why MonadTall looks like on my main monitor</p>
-        <img src="../Images/qtile/terminals.png " style="max-width:50%;" title="Lots of terminals">
 
-        <h2><u>Widgets</u></h2>
-        <h3><u>Status bar</u></h3>
-        <p>I am going to go through my widgets now. If one is not mentioned that is because it has default settings.</p>
-        <img src="../Images/qtile/widgetbar.png" style="max-width:70%;" title="Widgets">
+        <p style="color: rgb(95, 95, 95); border-collapse: collapse; width: 100%;">
+        What GNU/Linux system you are using <br><br>
+        What GPU/CPU you have <br><br>
+        What your Host name is and what your Username is <br><br>
+        What your uptime on your computer is <br><br>
+        What package manager you are using <br><br>
+        </p>
+
+        <p>I am planning on adding things like what window manager you are using, what your local or public IP is, and how much battery you have for laptop users.<br>
+            and more. I will do my best to achieve this in the future, so stay tuned if you are interested!</p>
+
+           <hr>
+        <h2>How to use Fakefetch</h2>
+
+        <H4>Step one</H4>
+        <p>The first thing you want to do is clone the Git repo. You can do this by using this command. git clone <u>https://gitlab.com/Shipwreckt/fakefetch</u><br>
+            After doing this, you do need to install something called lsb-release. On Arch Linux, it is <u>sudo pacman -S lsb-release</u> on apt it should be <u>sudo apt install lsb-release</u><br><br>
+        </p>
+        <h4>Step two</h4>
         <p>
-            I have put my status bar at the top of my screen because it is easier to see than at the bottom (in my opinion).
-            I have also changed the colours of the windows that I am currently on, and I have changed it from a box selection<br>
-            to a block selection so that it is more noticeable, and for Styal, I have also changed the active and inactive windows<br>
-            to the same colour because I do not personally want them to be different. I think they look good as just white throughout. 
+            You want to cd into the file, so go to the location where the file is and open it with your preferred text editor.<br>
+            From there, all you need to do is configure things to your liking. There is documentation below if you want to know more.<br>
+            Also, to test it, you need to make it an active command, so all you need to do for that is do <u>chmod +x fakefetch.sh</u>.<br>
+            You can test your config with ./fakefetch.sh
         </p>
 
-        <h3><u>Background colour</u></h3>
-        <p>The background colour for my status bar is #1d141d. A very dark purple. I chose this because it matches my aesthetic. <br>
-            The only widget to differentiate this colour standard is the 'widget.windowname' because there needs to be some variation in my status bar.</p>
-
-        <h3><u>Clock</u></h3>
-        <p>I have changed the date format and the time format to day, month, year, and 24 hour time.
-            widget.Clock(format="%d-%m-%Y %H:%M",), This is how I achieved that.
-        </p>
-        
-        <h2><u>Start-up programmes</u></h2>
-        <p>
-            I have a few startup programs. I have Nitrogen, so I can have a wallpaper on startup instead of manually setting it every single time<br>
-            I also have Picom for my composer; I only have it so I can see through terminals because they just feel and look better<br>
-            And my last startup programme is Redshift. I have this because it is easier on my eyes if I am using the computer for a long time.
-            <img src="../Images/qtile/autostart.png" style="max-width:70%" title="Autostart programs">
+        <h4>Step three</h4>
+        <p>You are now done configuring Fakefetch. Now you want to make it a command that you can use anywhere. To do this is simple,<br>
+            type <u>sudo mv ~/fakefetch/fakefetch.sh /usr/local/bin/</u> If this does not work for you, then double check where your<br>
+            config file is, and then try again.
         </p>
 
-        
+        <h4>optinal steps</h4>
+        <p>To make Fakefetch run whenever you open a terminal, type <u>echo "fakefetch.sh" >> ~/.bashrc</u> and it should work.<br>
+            Whenever you type <u>fakefetch.sh</u> it should come up in your terminal. Also, a note for now: it does change all your<br>
+            Terminal colours: I am working on fixing this, so give it time!</p>
+
         <hr>
-        <h3>Here is what my desktop currently looks like</h3>
-        <img src="../Images/qtile/desktop.png" style="max-width:50%;" title="My desktop">
-        <p>
-              For it to work you will need <a href="https://pypi.org/project/psutil/">psutil</a>, it is avaliable in most package managers.<br>
-              Here is my <a href="https://gitlab.com/Shipwreckt/Qtile-conf/-/blob/main/config.py?ref_type=heads">config file</a>
+        <h2>What are the variables ?</h2>
+        <h3>Colours</h3>
+        <p>So far, the colours are minimal; this is due to this originally being my project for me only; adding more colours is simple<br>
+            You need to define a new variable, but I do suggest changing the existing variables but it is not that hard don't worry. <br><br>
+
+            Here is a default colour that is in the list. <u>MAGENTA='\033[38;5;98m'</u>, this may look scary, but it is just a quick change<br>
+            All you need to change is the end bit 98m' (keep the m') to a colour on this list: <a href="https://www.ditig.com/publications/256-colors-cheat-sheet">https://www.ditig.com/publications/256-colors-cheat-sheet</a><br>
+            An example would be <u>GOLD='\033[38;5;220m'</u> Just choose whatever colours you want, mess around, and see what you like.
             </p>
+
+        <p>From this point we are going to cover all the boring variables so if you want to read on go ahead!</p>
+
+        <h3>Username and Hostname</h3>
+        <p>
+           <u>USERNAME=$(whoami)</u> This decares a variable called USERNAME witch is used in the Fakefetch config to show what user is logged in<br>
+           <u>HOSTNAME=$(uname -n)</u> This does the same thing as USERNAME but just for what your host name is for your computer
+        </p>
+
+        <h3>Distro</h3>
+        <p>
+            <u>DISTRO=$(lsb_release -sd | sed 's/"//g')</u> lsb_release -sd basically gives you the output "arch linux" or whatever GNU/Linux distro<br>
+            you are currently using. The sed 's/"//g' removes all double quotes ("") from the output of lsb_release -sd.<br><br>
+
+            <img src="../Images/fakefetch/OS.png">
+            This gets the output of DISTRO and basically displays it. Change the colour if you want it displayed differently.
+            
+        </p>
+
+        <h3>The rest</h3>
+        <p>
+            The rest is basically the same; I don't suggest changing the main bits because it will probably break it; I just suggest<br>
+            Messing around with the colours and the ASCII art for the time being, unless you know your bash, then go ahead and modify it to<br>
+            Your heart is content; it is free and open source software at the end of the day!
+        </p>
+
+        <hr>
+
+        <h3>How to change variable colours</h3>
+        <img src="../Images/fakefetch/OS.png">
+        <p>
+            As you can see, there is a colour variable called MAGENTA. If you wish to change the colour of the output, change the <br>
+            Variable name to a different colour that you have defined beforehand.
+        </p>
+
+        <hr>
+        <h3>Extra</h3>
+        <p>Remember, this is just a project I have done in my spare time, and this is my first programme to use bash, so it might not be perfect.
+but I am doing my best!</p>
+
+        <p>Here is the source code if you wanna have a little look around </p>
+
+        <a href="https://gitlab.com/Shipwreckt/fakefetch/">https://gitlab.com/Shipwreckt/fakefetch/</a><br>            
+  
     </main>
 
     <footer>
@@ -95,4 +134,3 @@
 </body>
 
 </html>
-
