@@ -58,5 +58,12 @@ img {
     margin: 0 auto;
 }
 
+hr {
+    color: #444444;
+    background-color: #444444;
+    height: 2px;
+    border: none;
+   }
+</style>
 
 
