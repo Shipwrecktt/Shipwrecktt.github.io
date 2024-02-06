@@ -1,5 +1,4 @@
 /* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,15 +41,6 @@ main {
     color: #cacaca;
 }
 
-footer {
-    background-color: #2a2a2a;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    bottom: 0;
-    width: 100%;
-    position: absolute;
-}
 
 img {
     max-width: 100%;
@@ -63,7 +53,29 @@ hr {
     background-color: #444444;
     height: 2px;
     border: none;
-   }
-</style>
+}
 
+.log-entry {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 300px;
+}
 
+.log-entry h2 {
+    margin-bottom: 10px;
+}
+
+.square {
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 30px 180px; /* 30 is bottom, 180 is the sides (left and right) */
+}
+
+.square img {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    max-width: 10%;
+}
