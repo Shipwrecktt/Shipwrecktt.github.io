@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipwreckt</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -50,20 +50,19 @@
 
         <H4>Step one</H4>
         <p>First thing you do want to do is clone Git repo. You can do this by using this command, git clone https://gitlab.com/Shipwreckt/fakefetch<br>
-            After doing this you do need to install something called lsb-release. On Arch Linux it is <u>sudo pacman -S lsb-release</u> on apt it should be <u>sudo apt install lsb-release</u><br><br>
-        </p>
+        This has to be in the home directory when you install it, you can delete the file when all this is done.</p>
+
         <h4>Step two</h4>
         <p>
-            You want to cd into the file, so go to the location where the file is and open it with your prefered text editor,<br> 
+            You want to cd into the file, so go to the location where the fakefetch file is and open it with your prefered text editor,<br>
             from there all you need to do is configure things to your liking there is documentasion below if you want to know more.<br>
             Also to test it you need to make it an active command so all you need to do for that is do <u>chmod +x fakefetch.sh</u><br>
-           You can test your config with ./fakefetch.sh 
+            but if you don't want too you can run ./setup.sh and boom! You can delete the fakefetch file now if you want too.
         </p>
 
         <h4>Step three</h4>
         <p>You are now done configuring Fakefetch now you want to make it a command that you can use anywhere, to do this is simple<br>
-           type <u>sudo mv ~/fakefetch/fakefetch.sh /usr/local/bin/</u> if this does not work for you then double check where your<br>
-           config file is and then try again.</p>
+           you just need to run the setup script ./setup.sh and it will do all the work for you!
 
         <h4>optinal steps</h4>
         <p>To make Fakefetch run whenever you open a terminal type <u>echo "fakefetch.sh" >> ~/.bashrc</u> and it should work.<br>
@@ -120,10 +119,6 @@
         <a href="https://gitlab.com/Shipwreckt/fakefetch/">https://gitlab.com/Shipwreckt/fakefetch/</a><br>            
   
     </main>
-
-    <footer>
-        <p>Made by Shipwreckt</p>
-    </footer>
 
 </body>
 
