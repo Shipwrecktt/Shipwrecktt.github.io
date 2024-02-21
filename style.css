@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0A0708;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px
+}
+
+/*Changes underline text to purple*/
+.underline-text {
+    border-bottom: 3px solid #9C219C;
+    color: #ffffff; 
+    text-decoration: none;
+}
+
+header {
+    background-color: #1C1A1B;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Nav bar */
+nav {
+    background-color: #2A2728;
+    padding: 0.5em;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1em;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+
+hr {
+    color: #444444;
+    background-color: #444444;
+    height: 2px;
+    border: none;
+}
